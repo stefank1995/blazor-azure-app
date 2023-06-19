@@ -1,23 +1,15 @@
 ﻿@page "/"
+@using IMS.Application.Features.Inventories.Interfaces;
 @inject IConfiguration Config;
 
-<PageTitle>Index</PageTitle>
+@inject IViewInventoriesByName ViewInventoriesByName
+
+<PageTitle>Test Page</PageTitle>
 
 <h1>Hello, world!</h1>
 
-<p class="h4">
-	Default Connection String: @defaultConnection
-</p>
 
-<p>
-	This sample site was deployed by GitHub Actions.
-</p>
 
 @code {
-	private String defaultConnection = "";
-
-	protected override void OnInitialized()
-	{
-		defaultConnection = Config.GetConnectionString("Default") ?? "unknown";
-	}
+	
 }

@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBlazorApp", "SimpleBlazorApp\SimpleBlazorApp.csproj", "{B4A23D39-3D50-4D5B-A371-63B49DB7B01B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBlazorApp", "SimpleBlazorApp\SimpleBlazorApp.csproj", "{B4A23D39-3D50-4D5B-A371-63B49DB7B01B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IMS.Plugins", "IMS.Plugins", "{FA2A4F88-D79C-431F-8104-458112201225}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMS.Application", "IMS.Application\IMS.Application.csproj", "{C4C96E7F-A476-490A-8C28-C01055900015}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMS.Domain", "IMS.Domain\IMS.Domain.csproj", "{73DFF1A2-5361-4E7A-BA20-9D796F04AD18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMS.Plugins.InMemory", "IMS.Plugins\IMS.Plugins.InMemory\IMS.Plugins.InMemory.csproj", "{873A5BD7-4B84-4845-902A-794CBA792F49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +23,24 @@ Global
 		{B4A23D39-3D50-4D5B-A371-63B49DB7B01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4A23D39-3D50-4D5B-A371-63B49DB7B01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4A23D39-3D50-4D5B-A371-63B49DB7B01B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4C96E7F-A476-490A-8C28-C01055900015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4C96E7F-A476-490A-8C28-C01055900015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4C96E7F-A476-490A-8C28-C01055900015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4C96E7F-A476-490A-8C28-C01055900015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73DFF1A2-5361-4E7A-BA20-9D796F04AD18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73DFF1A2-5361-4E7A-BA20-9D796F04AD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73DFF1A2-5361-4E7A-BA20-9D796F04AD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73DFF1A2-5361-4E7A-BA20-9D796F04AD18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{873A5BD7-4B84-4845-902A-794CBA792F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873A5BD7-4B84-4845-902A-794CBA792F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873A5BD7-4B84-4845-902A-794CBA792F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873A5BD7-4B84-4845-902A-794CBA792F49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{873A5BD7-4B84-4845-902A-794CBA792F49} = {FA2A4F88-D79C-431F-8104-458112201225}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF7354F7-6849-41A6-88B9-BCAB8512F801}
