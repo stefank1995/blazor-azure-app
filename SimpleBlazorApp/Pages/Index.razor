@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using IMS.Application.Features.Inventories.Interfaces;
+@using IMS.Domain.Entities;
 @inject IConfiguration Config;
 
 @inject IViewInventoriesByName ViewInventoriesByName
@@ -7,9 +8,22 @@
 <PageTitle>Test Page</PageTitle>
 
 <h1>Hello, world!</h1>
+<br />
+<ul>
+	@foreach(var inv in _inventories)
+	{
+		<li>@inv.InventoryName</li>
+	}
+
+</ul>
 
 
 
 @code {
-	
+	private List<Inventory> _inventories = new List<Inventory>();
+
+	protected override async Task OnInitializedAsync()
+	{
+		_inventories = (await ViewInventoriesByName.ExecuteAsync()).ToList();
+	}
 }

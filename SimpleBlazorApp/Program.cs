@@ -1,4 +1,5 @@
 using IMS.Application.Contracts.Persistence;
+using IMS.Application.Features.Inventories;
 using IMS.Application.Features.Inventories.Interfaces;
 using IMS.Plugins.InMemory.Repositories;
 using SimpleBlazorApp.Data;
@@ -11,7 +12,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddSingleton<IInventoryRepository, InventoryRepository>();
-builder.Services.AddTransient<IViewInventoriesByName, IViewInventoriesByName>();
+builder.Services.AddTransient<IViewInventoriesByName, ViewInventoriesByName>();
 
 
 var app = builder.Build();
