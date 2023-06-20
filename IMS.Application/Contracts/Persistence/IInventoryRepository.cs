@@ -7,5 +7,7 @@ namespace IMS.Application.Contracts.Persistence
 		public Task<IEnumerable<Inventory>> GetInventoryByNameAsync(string name);
 
 		Task AddInventoryAsync(Inventory inventory);
+
+		Task UpdateInventoryAsync(Inventory inventory);
 	}
 }

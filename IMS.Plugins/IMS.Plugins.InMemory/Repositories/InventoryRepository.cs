@@ -63,5 +63,22 @@ namespace IMS.Plugins.InMemory.Repositories
 
 			return Task.CompletedTask;
 		}
+
+		public Task UpdateInventoryAsync(Inventory inventory)
+		{
+			if (_inventories.Any(x => x.InventoryId != inventory.InventoryId && x.InventoryName.Equals(inventory.InventoryName, StringComparison.OrdinalIgnoreCase)))
+				return Task.CompletedTask;
+
+
+			var inv = _inventories.FirstOrDefault(x => x.InventoryId == inventory.InventoryId);
+			if (inv != null)
+			{
+				inv.InventoryName = inventory.InventoryName;
+				inv.Quantity = inventory.Quantity;
+				inv.Price = inventory.Price;
+			}
+
+			return Task.CompletedTask;
+		}
 	}
 }
