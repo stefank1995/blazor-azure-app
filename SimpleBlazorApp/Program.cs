@@ -2,17 +2,17 @@ using IMS.Application.Contracts.Persistence;
 using IMS.Application.Features.Inventories;
 using IMS.Application.Features.Inventories.Interfaces;
 using IMS.Plugins.InMemory.Repositories;
-using SimpleBlazorApp.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddSingleton<IInventoryRepository, InventoryRepository>();
 builder.Services.AddTransient<IViewInventoriesByName, ViewInventoriesByName>();
+builder.Services.AddTransient<IAddInventory, AddInventory>();
 
 
 var app = builder.Build();
