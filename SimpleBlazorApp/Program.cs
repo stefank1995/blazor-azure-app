@@ -11,8 +11,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
 builder.Services.AddSingleton<IInventoryRepository, InventoryRepository>();
-builder.Services.AddTransient<IViewInventoriesByName, ViewInventoriesByName>();
-builder.Services.AddTransient<IAddInventory, AddInventory>();
+builder.Services.AddTransient<IViewInventoriesByNameUseCase, ViewInventoriesByNameUseCase>();
+builder.Services.AddTransient<IAddInventoryUseCase, AddInventoryUseCase>();
 
 
 var app = builder.Build();

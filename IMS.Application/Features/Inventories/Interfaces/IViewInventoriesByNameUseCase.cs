@@ -2,7 +2,7 @@
 
 namespace IMS.Application.Features.Inventories.Interfaces
 {
-	public interface IViewInventoriesByName
+	public interface IViewInventoriesByNameUseCase
 	{
 
 		Task<IEnumerable<Inventory>> ExecuteAsync(string name = "");

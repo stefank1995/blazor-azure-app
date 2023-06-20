@@ -1,6 +1,6 @@
 ﻿@using IMS.Application.Features.Inventories.Interfaces;
 @using IMS.Domain.Entities;
-@inject IViewInventoriesByName ViewInventoriesByName
+@inject IViewInventoriesByNameUseCase ViewInventoriesByNameUseCase
 
 <h3>InventoryListComponent</h3>
 
@@ -25,6 +25,6 @@
 
 	protected override async Task OnParametersSetAsync()
 	{
-		listInventories = (await ViewInventoriesByName.ExecuteAsync(this.SearchTerm)).ToList();
+		listInventories = (await ViewInventoriesByNameUseCase.ExecuteAsync(this.SearchTerm)).ToList();
 	}
 }

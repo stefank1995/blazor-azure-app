@@ -4,10 +4,10 @@ using IMS.Domain.Entities;
 
 namespace IMS.Application.Features.Inventories
 {
-	public class ViewInventoriesByName : IViewInventoriesByName
+	public class ViewInventoriesByNameUseCase : IViewInventoriesByNameUseCase
 	{
 		public IInventoryRepository inventoryRepository { get; set; }
-		public ViewInventoriesByName(IInventoryRepository inventoryRepository)
+		public ViewInventoriesByNameUseCase(IInventoryRepository inventoryRepository)
 		{
 			this.inventoryRepository = inventoryRepository;
 		}
