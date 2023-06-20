@@ -20,21 +20,21 @@ namespace IMS.Plugins.InMemory.Repositories
 				},
 				new Inventory()
 				{
-					InventoryId = 1,
+					InventoryId = 2,
 					InventoryName = "Bike Body",
 					Quantity= 10,
 					Price= 15
 				},
 				new Inventory()
 				{
-					InventoryId = 1,
+					InventoryId = 3,
 					InventoryName = "Bike Wheel",
 					Quantity= 20,
 					Price= 8
 				},
 				new Inventory()
 				{
-					InventoryId = 1,
+					InventoryId = 4,
 					InventoryName = "Bike Pedal",
 					Quantity= 20,
 					Price= 1
