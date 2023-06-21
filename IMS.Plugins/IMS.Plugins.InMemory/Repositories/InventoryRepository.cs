@@ -80,5 +80,11 @@ namespace IMS.Plugins.InMemory.Repositories
 
 			return Task.CompletedTask;
 		}
+
+		public async Task<Inventory> GetInventoryByIdAsync(int inventoryId)
+		{
+			var inv = _inventories.FirstOrDefault(x => x.InventoryId == inventoryId);
+			return await Task.FromResult(inv);
+		}
 	}
 }
