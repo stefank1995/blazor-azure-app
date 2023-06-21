@@ -13,7 +13,7 @@ namespace IMS.Plugins.InMemory
 			_products = new List<Product>()
 			{
 				new Product() { ProductId = 1, ProductName = "Bike", Quantity = 10, Price = 400},
-				new Product() { ProductId = 1, ProductName = "Car", Quantity = 3, Price = 9000}
+				new Product() { ProductId = 2, ProductName = "Car", Quantity = 3, Price = 9000}
 			};
 		}
 

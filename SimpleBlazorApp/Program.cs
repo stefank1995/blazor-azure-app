@@ -1,8 +1,11 @@
 using IMS.Application.Contracts.Persistence;
 using IMS.Application.Features.Inventories;
 using IMS.Application.Features.Inventories.Interfaces;
+using IMS.Application.Features.Products.Interfaces;
+using IMS.Plugins.InMemory;
 using IMS.Plugins.InMemory.Repositories;
-
+using IMS.UseCases.PluginInterfaces;
+using IMS.UseCases.Products;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,10 +14,15 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
 builder.Services.AddSingleton<IInventoryRepository, InventoryRepository>();
+builder.Services.AddSingleton<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IViewInventoriesByNameUseCase, ViewInventoriesByNameUseCase>();
 builder.Services.AddTransient<IAddInventoryUseCase, AddInventoryUseCase>();
 builder.Services.AddTransient<IEditInventoryUseCase, EditInventoryUseCase>();
 builder.Services.AddTransient<IViewInventoryByIdUseCase, ViewInventoryByIdUseCase>();
+builder.Services.AddTransient<IViewProductsByNameUseCase, ViewProductsByNameUseCase>();
+builder.Services.AddTransient<IAddProductUseCase, AddProductUseCase>();
+builder.Services.AddTransient<IViewProductByIdUseCase, ViewProductByIdUseCase>();
+builder.Services.AddTransient<IEditProductUseCase, EditProductUseCase>();
 
 
 var app = builder.Build();
