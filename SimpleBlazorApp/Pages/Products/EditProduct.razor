@@ -1,6 +1,7 @@
 ﻿@page "/editproduct/{id:int}"
 @using IMS.Application.Features.Products.Interfaces;
-@using IMS.CoreBusiness;
+@using IMS.Domain.Entities;
+
 
 @inject IViewProductByIdUseCase ViewProductByIdUseCase
 @inject IEditProductUseCase EditProductUseCase

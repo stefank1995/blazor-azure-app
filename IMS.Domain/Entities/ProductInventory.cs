@@ -1,6 +1,6 @@
-﻿using IMS.Domain.Entities;
+﻿
 
-namespace IMS.CoreBusiness
+namespace IMS.Domain.Entities
 {
 	public class ProductInventory
 	{

@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using IMS.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 
-namespace IMS.CoreBusiness.Validations
+namespace IMS.Domain.Validations
 {
 	public class Product_EnsurePriceIsGreaterThanInventoriesCost : ValidationAttribute
 	{

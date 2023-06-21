@@ -1,4 +1,4 @@
-﻿using IMS.CoreBusiness;
+﻿using IMS.Domain.Entities;
 
 namespace IMS.Application.Features.Products.Interfaces
 {

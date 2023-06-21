@@ -1,8 +1,8 @@
-﻿using IMS.Application.Features.Products.Interfaces;
-using IMS.CoreBusiness;
-using IMS.UseCases.PluginInterfaces;
+﻿using IMS.Application.Contracts.Persistence;
+using IMS.Application.Features.Products.Interfaces;
+using IMS.Domain.Entities;
 
-namespace IMS.UseCases.Products
+namespace IMS.Application.Products.Interfaces
 {
     public class AddProductUseCase : IAddProductUseCase
     {

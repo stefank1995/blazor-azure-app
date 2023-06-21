@@ -2,10 +2,8 @@ using IMS.Application.Contracts.Persistence;
 using IMS.Application.Features.Inventories;
 using IMS.Application.Features.Inventories.Interfaces;
 using IMS.Application.Features.Products.Interfaces;
-using IMS.Plugins.InMemory;
+using IMS.Application.Products.Interfaces;
 using IMS.Plugins.InMemory.Repositories;
-using IMS.UseCases.PluginInterfaces;
-using IMS.UseCases.Products;
 
 var builder = WebApplication.CreateBuilder(args);
 

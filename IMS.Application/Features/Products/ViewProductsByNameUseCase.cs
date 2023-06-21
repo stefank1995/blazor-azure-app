@@ -1,20 +1,20 @@
-﻿using IMS.Application.Features.Products.Interfaces;
-using IMS.CoreBusiness;
-using IMS.UseCases.PluginInterfaces;
+﻿using IMS.Application.Contracts.Persistence;
+using IMS.Application.Features.Products.Interfaces;
+using IMS.Domain.Entities;
 
-namespace IMS.UseCases.Products
+namespace IMS.Application.Products.Interfaces
 {
-	public class ViewProductsByNameUseCase : IViewProductsByNameUseCase
-	{
-		private readonly IProductRepository productRepository;
-		public ViewProductsByNameUseCase(IProductRepository productRepository)
-		{
-			this.productRepository = productRepository;
-		}
+    public class ViewProductsByNameUseCase : IViewProductsByNameUseCase
+    {
+        private readonly IProductRepository productRepository;
+        public ViewProductsByNameUseCase(IProductRepository productRepository)
+        {
+            this.productRepository = productRepository;
+        }
 
-		public async Task<IEnumerable<Product>> ExecuteAsync(string name = "")
-		{
-			return await productRepository.GetProductsByNameAsync(name);
-		}
-	}
+        public async Task<IEnumerable<Product>> ExecuteAsync(string name = "")
+        {
+            return await productRepository.GetProductsByNameAsync(name);
+        }
+    }
 }

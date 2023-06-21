@@ -1,6 +1,6 @@
-﻿using IMS.CoreBusiness;
+﻿using IMS.Domain.Entities;
 
-namespace IMS.UseCases.PluginInterfaces
+namespace IMS.Application.Contracts.Persistence
 {
 	public interface IProductRepository
 	{
