@@ -33,7 +33,7 @@
 
 	private async Task SaveInventory()
 	{
-		await AddInventoryUseCase.ExecuteAsync(inventory);
+		await AddInventoryUseCase.ExecuteAsync(this.inventory);
 		NavigationManager.NavigateTo("/inventories");
 	}
 
