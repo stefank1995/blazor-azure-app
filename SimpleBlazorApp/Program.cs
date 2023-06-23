@@ -1,4 +1,6 @@
 using IMS.Application.Contracts.Persistence;
+using IMS.Application.Features.Activities;
+using IMS.Application.Features.Activities.Interfaces;
 using IMS.Application.Features.Inventories;
 using IMS.Application.Features.Inventories.Interfaces;
 using IMS.Application.Features.Products.Interfaces;
@@ -13,6 +15,7 @@ builder.Services.AddServerSideBlazor();
 
 builder.Services.AddSingleton<IInventoryRepository, InventoryRepository>();
 builder.Services.AddSingleton<IProductRepository, ProductRepository>();
+builder.Services.AddSingleton<IInventoryTransactionRepository, InventoryTransactionRepository>();
 builder.Services.AddTransient<IViewInventoriesByNameUseCase, ViewInventoriesByNameUseCase>();
 builder.Services.AddTransient<IAddInventoryUseCase, AddInventoryUseCase>();
 builder.Services.AddTransient<IEditInventoryUseCase, EditInventoryUseCase>();
@@ -21,6 +24,7 @@ builder.Services.AddTransient<IViewProductsByNameUseCase, ViewProductsByNameUseC
 builder.Services.AddTransient<IAddProductUseCase, AddProductUseCase>();
 builder.Services.AddTransient<IViewProductByIdUseCase, ViewProductByIdUseCase>();
 builder.Services.AddTransient<IEditProductUseCase, EditProductUseCase>();
+builder.Services.AddTransient<IPurchaseInventoryUseCase, PurchaseInventoryUseCase>();
 
 
 var app = builder.Build();

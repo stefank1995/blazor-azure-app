@@ -10,8 +10,4 @@
     <ProjectReference Include="..\IMS.Domain\IMS.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Activities\Interfaces\" />
-  </ItemGroup>
-
 </Project>

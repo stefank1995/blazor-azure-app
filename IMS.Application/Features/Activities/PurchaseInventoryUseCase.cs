@@ -1,9 +1,10 @@
 ﻿using IMS.Application.Contracts.Persistence;
+using IMS.Application.Features.Activities.Interfaces;
 using IMS.Domain.Entities;
 
 namespace IMS.Application.Features.Activities
 {
-    public class PurchaseInventoryUseCase
+    public class PurchaseInventoryUseCase : IPurchaseInventoryUseCase
     {
         private readonly IInventoryTransactionRepository inventoryTransactionRepository;
         private readonly IInventoryRepository inventoryRepository;
