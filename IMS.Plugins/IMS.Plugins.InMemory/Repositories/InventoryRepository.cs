@@ -43,7 +43,7 @@ namespace IMS.Plugins.InMemory.Repositories
 			};
 		}
 
-		public async Task<IEnumerable<Inventory>> GetInventoryByNameAsync(string name)
+		public async Task<IEnumerable<Inventory>> GetInventoriesByNameAsync(string name)
 		{
 			if (string.IsNullOrWhiteSpace(name)) return await Task.FromResult(_inventories);
 

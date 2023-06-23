@@ -4,7 +4,7 @@ namespace IMS.Application.Contracts.Persistence
 {
 	public interface IInventoryRepository
 	{
-		public Task<IEnumerable<Inventory>> GetInventoryByNameAsync(string name);
+		public Task<IEnumerable<Inventory>> GetInventoriesByNameAsync(string name);
 
 		public Task<Inventory> GetInventoryByIdAsync(int inventoryId);
 
