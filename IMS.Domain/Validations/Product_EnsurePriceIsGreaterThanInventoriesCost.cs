@@ -12,7 +12,7 @@ namespace IMS.Domain.Validations
 			{
 				if (!ValidatePricing(product))
 					return new ValidationResult(
-						$"Product price is less than inventory price: {TotalInventoryCost(product).ToString("c")}",
+						$"The product's price is less than the inventories cost: {TotalInventoryCost(product).ToString("c")}",
 						new List<string>() { validationContext.MemberName }
 						);
 			}
