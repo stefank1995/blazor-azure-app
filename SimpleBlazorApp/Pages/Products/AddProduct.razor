@@ -1,9 +1,10 @@
 ﻿@page "/addproduct"
-@using IMS.Application.Features.Products.Interfaces;
-@using IMS.Domain.Entities;
+@using IMS.Application.Features.Products.Interfaces
 
 @inject NavigationManager NavigationManager
 @inject IAddProductUseCase AddProductUseCase
+
+@attribute [Authorize(Policy = "Inventory")]
 
 <h3>Add Product</h3>
 <br/>

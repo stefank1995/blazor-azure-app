@@ -1,6 +1,5 @@
 ﻿@page "/addinventory"
-@using IMS.Application.Features.Inventories.Interfaces;
-@using IMS.Domain.Entities;
+@using IMS.Application.Features.Inventories.Interfaces
 @inject IAddInventoryUseCase AddInventoryUseCase
 @inject NavigationManager NavigationManager
 
@@ -33,7 +32,7 @@
 
 	private async Task SaveInventory()
 	{
-		await AddInventoryUseCase.ExecuteAsync(this.inventory);
+		await AddInventoryUseCase.ExecuteAsync(inventory);
 		NavigationManager.NavigateTo("/inventories");
 	}
 

@@ -6,7 +6,7 @@ namespace IMS.Application.Features.Inventories
 {
 	public class ViewInventoriesByNameUseCase : IViewInventoriesByNameUseCase
 	{
-		public IInventoryRepository inventoryRepository { get; set; }
+		private readonly IInventoryRepository inventoryRepository;
 		public ViewInventoriesByNameUseCase(IInventoryRepository inventoryRepository)
 		{
 			this.inventoryRepository = inventoryRepository;

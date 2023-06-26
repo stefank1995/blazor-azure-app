@@ -1,6 +1,10 @@
 ﻿<div class="form-group">
     <label for="search">@Label</label>
-    <input type="text" class="form-control" value="@_userInput" @oninput="@(async (args) => {await OnInput(args);})" @onkeyup="OnPressKeys" />
+    <input type="text"
+           class="form-control"           
+           value="@_userInput"
+           @oninput="@(async (args) => {await OnInput(args);})"
+           @onkeyup="OnPressKeys" />
 </div>
 @if (searchResults != null && searchResults.Count > 0)
 {
@@ -10,9 +14,11 @@
                 int itemIndex = 0;
                 foreach (var item in searchResults)
                 {
-                    <li @key="item.Id" class="@(itemIndex == currentItemIndex?"selected":"")" @onclick="@(()=>OnSelectItem(item))">
-                         @item.Name
-                    </li>
+                                <li @key="item.Id"
+            class="@(itemIndex == currentItemIndex?"selected":"")"
+                    @onclick="@(()=>OnSelectItem(item))">
+                        @item.Name
+                                </li>
                     itemIndex++;
                 }
             }
