@@ -1,8 +1,8 @@
 ﻿using IMS.Application.Contracts.Persistence;
-using IMS.Application.Reports.Interfaces;
+using IMS.Application.Features.Reports.Interfaces;
 using IMS.Domain.Entities;
 
-namespace IMS.Application.Reports
+namespace IMS.Application.Features.Reports
 {
     public class SearchInventoryTransactionsUseCase : ISearchInventoryTransactionsUseCase
     {

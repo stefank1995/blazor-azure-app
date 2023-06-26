@@ -4,9 +4,9 @@ using IMS.Application.Features.Activities.Interfaces;
 using IMS.Application.Features.Inventories;
 using IMS.Application.Features.Inventories.Interfaces;
 using IMS.Application.Features.Products.Interfaces;
+using IMS.Application.Features.Reports;
+using IMS.Application.Features.Reports.Interfaces;
 using IMS.Application.Products.Interfaces;
-using IMS.Application.Reports;
-using IMS.Application.Reports.Interfaces;
 using IMS.Plugins.InMemory.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);

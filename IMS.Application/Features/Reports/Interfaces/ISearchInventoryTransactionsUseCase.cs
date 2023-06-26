@@ -1,6 +1,6 @@
 ﻿using IMS.Domain.Entities;
 
-namespace IMS.Application.Reports.Interfaces
+namespace IMS.Application.Features.Reports.Interfaces
 {
     public interface ISearchInventoryTransactionsUseCase
     {
