@@ -1,9 +1,10 @@
-﻿using IMS.Domain.Entities;
+﻿using IMS.Application.Contracts.Persistence;
+using IMS.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace IMS.Plugins.EFCoreSqlServer.Repositories
 {
-    public class ProductEFCoreRepository
+    public class ProductEFCoreRepository : IProductRepository
     {
         private readonly IDbContextFactory<IMSContext> contextFactory;
 
