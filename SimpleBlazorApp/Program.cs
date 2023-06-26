@@ -7,11 +7,19 @@ using IMS.Application.Features.Products.Interfaces;
 using IMS.Application.Features.Reports;
 using IMS.Application.Features.Reports.Interfaces;
 using IMS.Application.Products.Interfaces;
+using IMS.Plugins.EFCoreSqlServer;
 using IMS.Plugins.InMemory.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<IMSContext>(options =>
+{
+	options.UseSqlServer(builder.Configuration.GetConnectionString("InventoryManagement"));
+});
+
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
