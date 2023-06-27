@@ -19,6 +19,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//Authorization Configuration
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireClaim("Department", "Administration"));
+    options.AddPolicy("Inventory", policy => policy.RequireClaim("Department", "InventoryManagement"));
+    options.AddPolicy("Sales", policy => policy.RequireClaim("Department", "Sales"));
+    options.AddPolicy("Purchasers", policy => policy.RequireClaim("Department", "Purchasing"));
+    options.AddPolicy("Productions", policy => policy.RequireClaim("Department", "ProductionManagement"));
+});
+
 //EF Core Configuration for Identity
 builder.Services.AddDbContext<AccountDbContext>(options =>
 {
