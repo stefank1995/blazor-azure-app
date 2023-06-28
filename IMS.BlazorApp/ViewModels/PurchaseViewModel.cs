@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SimpleBlazorApp.ViewModels
+namespace IMS.BlazorApp.ViewModels
 {
     public class PurchaseViewModel
     {

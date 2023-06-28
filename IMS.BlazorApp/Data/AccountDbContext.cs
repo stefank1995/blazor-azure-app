@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace SimpleBlazorApp.Data
+namespace IMS.BlazorApp.Data
 {
     public class AccountDbContext : IdentityDbContext
     {

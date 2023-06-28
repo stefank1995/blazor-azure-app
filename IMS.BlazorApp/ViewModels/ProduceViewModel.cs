@@ -1,8 +1,8 @@
-﻿using IMS.Domain.Entities;
-using SimpleBlazorApp.ViewModelValidations;
+﻿using IMS.BlazorApp.ViewModelValidations;
+using IMS.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
-namespace SimpleBlazorApp.ViewModels
+namespace IMS.BlazorApp.ViewModels
 {
     public class ProduceViewModel
     {

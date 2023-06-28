@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBlazorApp", "SimpleBlazorApp\SimpleBlazorApp.csproj", "{B4A23D39-3D50-4D5B-A371-63B49DB7B01B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMS.BlazorApp", "IMS.BlazorApp\IMS.BlazorApp.csproj", "{B4A23D39-3D50-4D5B-A371-63B49DB7B01B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IMS.Plugins", "IMS.Plugins", "{FA2A4F88-D79C-431F-8104-458112201225}"
 EndProject

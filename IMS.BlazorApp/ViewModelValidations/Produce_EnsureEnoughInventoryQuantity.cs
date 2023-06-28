@@ -1,7 +1,7 @@
-﻿using SimpleBlazorApp.ViewModels;
+﻿using IMS.BlazorApp.ViewModels;
 using System.ComponentModel.DataAnnotations;
 
-namespace SimpleBlazorApp.ViewModelValidations
+namespace IMS.BlazorApp.ViewModelValidations
 {
     public class Produce_EnsureEnoughInventoryQuantity : ValidationAttribute
     {

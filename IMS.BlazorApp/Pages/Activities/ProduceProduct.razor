@@ -1,58 +1,57 @@
-﻿@page "/sell"
-@using IMS.Application.Features.Activities.Interfaces
-@using IMS.Application.Features.Products.Interfaces
-@using static SimpleBlazorApp.Components.Common.AutoCompleteComponent
-
+﻿@page "/produce"
+@using IMS.Application.Features.Activities.Interfaces;
+@using IMS.Application.Features.Products.Interfaces;
+@using static IMS.BlazorApp.Components.Common.AutoCompleteComponent
 
 @inject IViewProductsByNameUseCase ViewProductsByNameUseCase
 @inject IViewProductByIdUseCase ViewProductByIdUseCase
-@inject ISellProductUseCase SellProductUseCase
+@inject IProduceProductUseCase ProduceProductUseCase
+
 @inject IJSRuntime JSRuntime
 
-@attribute [Authorize(Policy = "Sales")]
+@attribute [Authorize(Policy = "Productions")]
 
-<h3>Sell Product</h3>
-<br />
-<EditForm id="sell-form" Model="sellViewModel" OnValidSubmit="Sell">
+<h3>Produce Product</h3>
+<br/>
+
+<EditForm id="produce-form" Model="produceViewModel" OnValidSubmit="Produce">
     <DataAnnotationsValidator></DataAnnotationsValidator>
     <ValidationSummary></ValidationSummary>
 
     <div class="form-group">
-        <label for="po">Sales Order #</label>
-        <InputText id="po" @bind-Value="sellViewModel.SalesOrderNumber" class="form-control"></InputText>
+        <label for="po">Production #</label>
+        <InputText id="po" @bind-Value="produceViewModel.ProductionNumber" class="form-control"></InputText>
     </div>
     <br/>
     <div class="card">
         <div class="card-body">
             <div class="form-group">
-                <AutoCompleteComponent Label="Product to Sell"
+                <AutoCompleteComponent Label="Product to Produce"
                                        SearchFunction="SearchProduct"
                                        OnItemSelected="OnItemSelected">
                 </AutoCompleteComponent>                
-                <input type="hidden" value="@sellViewModel.ProductId" />                
+                <input type="hidden" value="@produceViewModel.ProductId" />                
             </div>
         </div>
     </div>
     <br/>
     <div class="form-group">
         <label for="qty">Quantity</label>
-        <InputNumber id="qty" @bind-Value="sellViewModel.QuantityToSell" class="form-control"></InputNumber>
-    </div>
-    <div class="form-group">
-        <label for="price">Unit Price</label>
-        <InputNumber id="price" @bind-Value="sellViewModel.UnitPrice" class="form-control"></InputNumber>
+        <InputNumber id="qty" @bind-Value="produceViewModel.QuantityToProduce" class="form-control"></InputNumber>
     </div>
 
     <br/>
-    <button type="submit" class="btn btn-primary">Sell</button>
+    <button type="submit" class="btn btn-primary">Produce</button>
 </EditForm>
+
+
 @code {
     private AuthenticationState? authenticationState;
 
     [CascadingParameter]
     private Task<AuthenticationState>? authenticationStateTask { get; set; }
 
-    private SellViewModel sellViewModel = new SellViewModel();
+    private ProduceViewModel produceViewModel = new ProduceViewModel();
     private Product? selectedProduct = null;
 
     protected override async Task OnInitializedAsync()
@@ -67,7 +66,7 @@
 
         if (firstRender)
         {
-            JSRuntime.InvokeVoidAsync("PreventFormSubmition", "sell-form");
+            JSRuntime.InvokeVoidAsync("PreventFormSubmition", "produce-form");
         }
     }
 
@@ -83,28 +82,25 @@
     {
         this.selectedProduct = await ViewProductByIdUseCase.ExecuteAsync(item.Id);
 
-        sellViewModel.ProductId = item.Id;
-        sellViewModel.Product = this.selectedProduct;
-        sellViewModel.UnitPrice = this.selectedProduct.Price;
+        produceViewModel.ProductId = item.Id;
+        produceViewModel.Product = this.selectedProduct;
     }
 
-    private async Task Sell()
+    private async Task Produce()
     {
-        if (this.sellViewModel.Product != null &&
+        if (this.selectedProduct != null &&
             authenticationState != null &&
             !string.IsNullOrWhiteSpace(authenticationState.User?.Identity?.Name)
         )
         {
-            await SellProductUseCase.ExecuteAsync(
-                this.sellViewModel.SalesOrderNumber,
-                this.sellViewModel.Product,
-                this.sellViewModel.QuantityToSell,
-                this.sellViewModel.UnitPrice,
-                authenticationState.User.Identity.Name
-            );
+            await ProduceProductUseCase.ExecuteAsync(this.produceViewModel.ProductionNumber,
+               this.selectedProduct,
+               this.produceViewModel.QuantityToProduce,
+               authenticationState.User.Identity.Name);
         }
 
-        this.sellViewModel = new SellViewModel();
+        produceViewModel = new ProduceViewModel();
         this.selectedProduct = null;
     }
+
 }

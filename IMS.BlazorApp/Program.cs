@@ -7,13 +7,13 @@ using IMS.Application.Features.Products.Interfaces;
 using IMS.Application.Features.Reports;
 using IMS.Application.Features.Reports.Interfaces;
 using IMS.Application.Products.Interfaces;
+using IMS.BlazorApp.Data;
 using IMS.Plugins.EFCoreSqlServer;
 using IMS.Plugins.EFCoreSqlServer.Repositories;
 using IMS.Plugins.InMemory.Repositories;
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SimpleBlazorApp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
